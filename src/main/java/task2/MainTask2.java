@@ -10,6 +10,7 @@ public class MainTask2 {
         printArray(array);
     }
 
+    // Сортировка массива пузырьковым методом
     public static void bubbleSort(int[] array) {
         int n = array.length;
         for (int i = 0; i < n - 1; i++)
@@ -19,6 +20,7 @@ public class MainTask2 {
                 }
     }
 
+    // Метод для перестановки значений массива
     public static void swap(int one, int two, int[] array) {
         int temp = array[one];
         array[one] = array[two];
