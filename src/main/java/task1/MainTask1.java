@@ -9,20 +9,13 @@ public class MainTask1 {
                 array[i][j] = randomValue(20+i+j);
             }
         }
-
-        for (int[] anArr : array) {
-            for (int anAnArr : anArr) {
-                System.out.print(anAnArr + " ");
-            }
-            System.out.println();
-        }
-
+        printArray(array);
         findMaxValue(array);
         findMinValue(array);
         findAverageValue(array);
     }
 
-    public static void findMaxValue(int[][] array) {
+    public static int findMaxValue(int[][] array) {
         int maxValue = array[0][0];
         for (int[] anArr : array) {
             for (int anAnArr : anArr) {
@@ -30,9 +23,10 @@ public class MainTask1 {
                     maxValue = anAnArr;
             }
         }
-        System.out.println(maxValue);
+        System.out.println("Максимальное значение массива равно: " + maxValue);
+        return maxValue;
     }
-    public static void findMinValue(int[][] array) {
+    public static int findMinValue(int[][] array) {
         int minValue = array[0][0];
         for (int[] anArr : array) {
             for (int anAnArr : anArr) {
@@ -40,17 +34,19 @@ public class MainTask1 {
                     minValue = anAnArr;
             }
         }
-        System.out.println(minValue);
+        System.out.println("Минимальное значение массива равно: " + minValue);
+        return minValue;
     }
 
-    public static void findAverageValue(int[][] array) {
+    public static double findAverageValue(int[][] array) {
         double sum = 0;
         for (int[] anArr : array) {
             for (int anAnArr : anArr) {
                 sum+=anAnArr;
             }
         }
-        System.out.println(sum/count(array));
+        System.out.println("Среднее значение массива равно: " + sum/count(array));
+        return sum/count(array);
     }
 
     private static int count(int[][] array) {
@@ -66,5 +62,14 @@ public class MainTask1 {
         value = (int) (System.currentTimeMillis() % maxValue);
         value = (value * 32719 + 3) % 32749;
         return value % maxValue;
+    }
+
+    public static void printArray(int[][] array) {
+        for (int[] anArr : array) {
+            for (int anAnArr : anArr) {
+                System.out.print(anAnArr + " ");
+            }
+            System.out.println();
+        }
     }
 }
